@@ -5,7 +5,7 @@
 //     let change = money / moneyArr[i];
 //     if (change >= 1) {
 //       answer[i] = Math.floor(change);
-//       money = money - Math.floor(change) * moneyArr[i];
+//       money = money - Math.floor(change) * moneyArr[i];ss
 //     } else if (change < 1 || change === 0) {
 //       answer[i] = 0;
 //     }
