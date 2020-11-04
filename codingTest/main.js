@@ -198,3 +198,101 @@
 //   console.log(A(stinrg));
 // }
 // F("browoanoommnaon");
+
+// function G(n) {
+//   let number = n;
+//   let ncount = 0;
+
+//   (function nCount(n) {
+//     let a = n.toString(2);
+//     let aArr = Array.from(a);
+//     for (let num of aArr) {
+//       if (num === "1") {
+//         ncount++;
+//       }
+//     }
+//   })(n);
+
+//   function other(n) {
+//     let otherCount = 0;
+//     let a = n.toString(2);
+//     let aArr = Array.from(a);
+//     for (let num of aArr) {
+//       if (num === "1") {
+//         otherCount++;
+//       }
+//     }
+//     if (ncount === otherCount) {
+//       return n.toString();
+//     } else {
+//       number++;
+//       console.log(number);
+//       other(number);
+//     }
+//   }
+//   other(n + 1);
+// }
+
+// G(15);
+
+// function solution(progresses, speeds) {
+//   var answer = [];
+//   let arr = [];
+//   for (let i = 0; i < progresses.length; i++) {
+//     arr.push([progresses[i]]);
+//   }
+//   function Add(speeds) {
+//     for (let i = 0; i < speeds.length; i++) {
+//       arr[i] = Number(arr[i]) + Number(speeds[i]);
+//     }
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     // console.log(arr)
+//     if (arr[i][0] <= 100) {
+//       Add(speeds);
+//     }
+//   }
+//   console.log(arr);
+//   return answer;
+// }
+
+// function solution(A, B) {
+//   var answer = 0;
+//   let arr = [];
+//   // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+
+//   for (let i = 0; i < A.length; i++) {
+//     let a = new Array();
+//     for (let j = 0; j < B.length; j++) {
+//       a.push(A[i] * B[j]);
+//     }
+//     arr.push(a);
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i].sort((a, b) => a - b);
+//     answer += Number(arr[i][0]);
+//   }
+//   console.log(answer);
+//   return answer;
+// }
+
+// solution([1, 2], [3, 4]);
+
+function solution(n, a, b) {
+  var answer = 3;
+  let arr = [];
+
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 === 0) {
+      let a = new Array();
+      a.push(i - 1);
+      a.push(i);
+      arr.push(a);
+    }
+  }
+
+  return answer;
+}
+solution(8, 4, 7);
