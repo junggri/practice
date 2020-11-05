@@ -280,19 +280,293 @@
 
 // solution([1, 2], [3, 4]);
 
-function solution(n, a, b) {
-  var answer = 3;
-  let arr = [];
+// function solution(n, a, b) {
+//   var answer = 3;
+//   let arr = [];
 
-  for (let i = 1; i <= n; i++) {
-    if (i % 2 === 0) {
-      let a = new Array();
-      a.push(i - 1);
-      a.push(i);
-      arr.push(a);
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 2 === 0) {
+//       let a = new Array();
+//       a.push(i - 1);
+//       a.push(i);
+//       arr.push(a);
+//     }
+//   }
+
+//   return answer;
+// }
+// solution(8, 4, 7);
+
+// function solution(board) {
+//   var answer = 1234;
+//   for (let i = 0; i < board.length; i++) {
+//     for (let j = 0; j < board[i].length - 1; j++) {
+//       if (board[i][j] === 1) {
+//         Check(board, i, j);
+//       }
+//     }
+//   }
+
+//   function Check(board, i, j, n) {
+//     console.log(i, j);
+//     if (i === 0) {
+//       console.log(board[])
+//     }
+//   }
+
+//   return answer;
+// }
+// solution([
+//   [0, 1, 1, 1],
+//   [1, 1, 1, 1],
+//   [1, 1, 1, 1],
+//   [0, 0, 1, 0],
+// ]);
+// function solution(land) {
+//   var answer = 0;
+
+//   for (let i = 0; i < land.length; i++) {
+//     if (i < land.length - 1) {
+//       let Max = Math.max.apply(null, land[i]);
+//       let idx = land[i].indexOf(Max);
+//       land[i + 1][idx] = 0;
+//       answer += Max;
+//     } else {
+//       let Max = Math.max.apply(null, land[i]);
+//       answer += Max;
+//     }
+//   }
+//   console.log(land, answer);
+//   return answer;
+// }
+
+// solution([
+//   [1, 2, 3, 5],
+//   [5, 6, 7, 8],
+//   [4, 3, 2, 1],
+// ]);
+
+// function solution(arr1, arr2) {
+//   var answer = [[]];
+//   console.log(
+//     Array(arr1.length)
+//       .fill()
+//       .map((r, i) => Array(arr2[0].length))
+//       .fill()
+//   );
+//   return answer;
+// }
+// solution(
+//   [
+//     [1, 4],
+//     [3, 2],
+//     [4, 1],
+//   ],
+//   [
+//     [3, 3],
+//     [3, 3],
+//   ]
+// );
+
+// function solution(name) {
+//   var answer = 0;
+//   let word = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+//   let count = 0;
+//   Array.from(name).forEach((e) => {
+//     let idx = word.indexOf(e);
+//     if (idx === 0) {
+//       count++;
+//     }
+//     if (idx >= 13) {
+//       answer += 26 - idx;
+//     } else {
+//       answer += idx;
+//     }
+//   });
+//   answer += name.length - 1 - count;
+
+//   return answer;
+// }
+// solution("JAN");
+
+// function solution(str1, str2) {
+//   var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+//   var answer = 0;
+
+//   function Make(str) {
+//     let a = new Array();
+//     for (let i = 0; i < str.length - 1; i++) {
+//       regExp.test(str[i]);
+//       regExp.test(str[i + 1]);
+//       if (regExp.test(str[i]) || regExp.test(str[i + 1])) continue;
+//       if (str[i] % 1 === 0 || str[i + 1] % 1 === 0) continue;
+//       a.push(str[i].toLowerCase() + str[i + 1].toLowerCase());
+//     }
+//     return a;
+//   }
+
+//   let strArr1 = Make(str1);
+//   let strArr2 = Make(str2);
+
+//   function isSame(arr1, arr2) {
+//     let arr3 = arr1.concat(arr2);
+//     let flag = arr3.every((e) => {
+//       return e === arr3[0];
+//     });
+//     return flag;
+//   }
+//   let asd = isSame(strArr1, strArr2);
+
+//   function GetCommon(arr1, arr2) {
+//     let a = new Array();
+//     if (asd) {
+//       if (arr1.length <= arr2.length) {
+//         return arr1;
+//       } else {
+//         return arr2;
+//       }
+//     }
+//     for (let i = 0; i < arr1.length; i++) {
+//       if (arr2.indexOf(arr1[i]) !== -1) {
+//         a.push(arr1[i]);
+//         arr2.splice(arr2.indexOf(arr1[i]), 1);
+//       }
+//     }
+//     return a;
+//   }
+
+//   let commonArr = GetCommon(strArr1, strArr2);
+//   console.log(123, commonArr);
+//   for (let i = 0; i < strArr1.length; i++) {
+//     if (asd) break;
+//     if (commonArr.indexOf(strArr1[i]) !== -1) {
+//       strArr1.splice(commonArr.indexOf(strArr1[i]), 1);
+//     }
+//   }
+
+//   function Union(common, arr1, arr2) {
+//     if (asd) {
+//       if (arr1.length > arr2.length) {
+//         return arr1;
+//       } else {
+//         return arr2;
+//       }
+//     }
+//     let arr = [...common, ...arr1, ...arr2];
+//     return arr;
+//   }
+
+//   let unionArr = Union(commonArr, strArr2, strArr1);
+//   console.log(commonArr.length, unionArr.length);
+//   answer = (commonArr.length / unionArr.length) * 65536;
+
+//   return answer;
+// }
+
+// solution("aa1+aa2", "AAAA12");
+
+// function solution(nums) {
+//   var answer = -1;
+
+//   for (let i = 0; i < 8; i++) {
+//     let arr = [];
+//     while (arr.length < 3) {
+//       let r = nums.splice(Math.floor(Math.random() * nums.length), 1)[0];
+//       console.log(r, nums);
+//       arr.push(r);
+//       console.log(arr);
+//     }
+//     let q = arr.reduce((a, b) => a + b);
+//   }
+
+//   return answer;
+// }
+// solution([1, 2, 7, 6, 4]);
+
+// function solution(skill, skill_trees) {
+//   var answer = 0;
+//   let skill_arr = Array.from(skill);
+//   let arr = [];
+
+//   for (let i = 0; i < skill_trees.length; i++) {
+//     arr.push(Array.from(skill_trees[i]));
+//   }
+
+//   for (let i = 0; i < skill_arr.length; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//       console.log(arr[i].indexOf(arr));
+//     }
+//   }
+//   return answer;
+// }
+
+// solution("CBD", ["BACDE", "CBADF", "AECB", "BDA"]);
+
+// function solution(n, words) {
+//   var answer = [];
+//   function check() {
+//     let f, s;
+//     for (let i = 0; i < words.length - 1; i++) {
+//       f = words[i][words[i].length - 1];
+//       s = words[i + 1][0];
+//       if (f !== s) {
+//         if ((i + 2) % n === 0) {
+//           answer.push(1);
+//         } else {
+//           answer.push(1);
+//         }
+//         answer.push(Math.floor((i + 2) / n));
+//       }
+//     }
+//   }
+//   check(words);
+//   console.log(answer);
+//   return answer;
+// }
+// // solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]);
+// solution(2, ["hello", "one", "even", "aever", "row", "world", "draw"]);
+//0,1,2,3,4,5
+//1,2,3,4,5,6
+//1,2,1,2,1,2
+//중복되거나, 단어가 맞지 않으면 인댁스 구하기....
+// function solution(number, k) {
+//   let answer;
+//   let asd = Array.from(number);
+//   let arr = [];
+//   let count = 0;
+
+//   while (count < k) {
+//     for (let i = 0; i < asd.length - 1; i++) {
+//       if (asd[i] < asd[i + 1]) {
+//         arr.push(asd[i + 1]);
+//         asd.splice(asd.indexOf(asd[i + 1]));
+//         count++;
+//       }
+//     }
+//   }
+//   console.log(arr);
+//   return answer;
+// }
+// solution("1924", 2);
+
+function solution(n) {
+  var answer = 0;
+  let arr = [0, 1];
+  function N(n) {
+    let sum = 0;
+    for (let i = 0; i < n - 1; i++) {
+      arr.push(arr[i] + arr[i + 1]);
+      sum = arr[i] + arr[i + 1];
     }
   }
+  N(n);
 
+  if (parseInt(arr[n] / 1234567) >= 1) {
+    answer = arr[n] - (arr[n] - parseInt(arr[n] / 1234567));
+  } else {
+    answer = arr[n] % 1234567;
+  }
+  console.log(answer);
   return answer;
 }
-solution(8, 4, 7);
+solution(10);
