@@ -549,24 +549,110 @@
 // }
 // solution("1924", 2);
 
-function solution(n) {
-  var answer = 0;
-  let arr = [0, 1];
-  function N(n) {
-    let sum = 0;
-    for (let i = 0; i < n - 1; i++) {
-      arr.push(arr[i] + arr[i + 1]);
-      sum = arr[i] + arr[i + 1];
-    }
-  }
-  N(n);
+// function solution(n) {
+//   var answer = 0;
+//   let arr = [0, 1];
+//   function N(n) {
+//     let sum = 0;
+//     for (let i = 0; i < n - 1; i++) {
+//       arr.push(arr[i] + arr[i + 1]);
+//       sum = arr[i] + arr[i + 1];
+//     }
+//   }
+//   N(n);
 
-  if (parseInt(arr[n] / 1234567) >= 1) {
-    answer = arr[n] - (arr[n] - parseInt(arr[n] / 1234567));
-  } else {
-    answer = arr[n] % 1234567;
-  }
-  console.log(answer);
-  return answer;
-}
-solution(10);
+//   if (parseInt(arr[n] / 1234567) >= 1) {
+//     answer = arr[n] - (arr[n] - parseInt(arr[n] / 1234567));
+//   } else {
+//     answer = arr[n] % 1234567;
+//   }
+//   console.log(answer);
+//   return answer;
+// }
+// solution(10);
+
+// function solution(progresses, speeds) {
+//   var answer = [];
+//   let arr = [];
+
+//   function iter() {
+//     for (let i = 0; i < progresses.length; i++) {
+//       progresses[i] = progresses[i] + speeds[i];
+//     }
+//     if (progresses[0] < 100) iter();
+//   }
+//   iter();
+
+//   for (let i = 0; i < progresses.length - 1; i++) {
+//     if (progresses[i] >= 100 && progresses[i + 1] >= 100) {
+//       let q = progresses.filter((e) => {
+//         return e < 100;
+//       });
+//       let a= see
+//       console.log(q);
+//       break;
+//     }
+//   }
+
+//   // console.log(progresses, speeds);
+//   return answer;
+// }
+// solution([93, 30, 55], [1, 30, 5]);
+// function solution(skill, skill_trees) {
+//   var answer = 0;
+//   let count = 0;
+//   let arr = Array.from(skill);
+//   for (let i = 0; i < skill_trees.length; i++) {
+//     let arr2 = [];
+//     for (let j = 0; j < arr.length; j++) {
+//       if (skill_trees[i].indexOf(arr[0]) === -1) continue;
+//       if (skill_trees[i].indexOf(arr[j]) === -1) continue;
+//       arr2.push(skill_trees[i].indexOf(arr[j]));
+//     }
+//     if (arr2.length === 0) count--;
+//     for (let k = 0; k < arr2.length - 1; k++) {
+//       if (arr2[k] > arr2[k + 1]) {
+//         count--;
+//         break;
+//       }
+//     }
+//   }
+
+//   answer = skill_trees.length + count;
+
+//   return answer;
+// }
+// solution("CBD", ["BACDE", "CBADF", "AECB", "BDA"]);
+// function solution(n) {
+//   var ans = 0;
+//   let last = (n * (n + 1)) / 2;
+//   let arr = Array(n).fill([]);
+//   console.log(arr);
+//   return ans;
+// }
+// solution(4);
+// function solution(s, n) {
+//   var answer = "";
+//   let word = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+//   let arr = Array.from(s);
+//   let q = arr.map((a, i) => {
+//     if (a === "Z" || a === "z") {
+//       word[i - 1];
+//     }
+//     if (a.toUpperCase() !== a) {
+//       word[i + 1].toLowerCase();
+//     } else if (a === " ") {
+//       (" ");
+//     } else {
+//       word[i + 1];
+//     }
+//   });
+//   console.log(q);
+//   return answer;
+// }
+// // solution("aB", 1);
+// solution("z", 1);
+// solution("a B z", 4);
+
+let a = "Z";
+console.log(a !== a.toUpperCase(), a === a.toUpperCase());
