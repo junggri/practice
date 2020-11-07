@@ -654,5 +654,80 @@
 // solution("z", 1);
 // solution("a B z", 4);
 
-let a = "Z";
-console.log(a !== a.toUpperCase(), a === a.toUpperCase());
+// let a = "Z";
+// console.log(a !== a.toUpperCase(), a === a.toUpperCase());
+// function solution(board, moves) {
+//   var answer = 0;
+//   let arr = [];
+//   for (let i = 0; i < moves.length; i++) {
+//     arr.push(board[moves[i] - 1][board[moves[i] - 1].length - 1]);
+//     board[moves[i] - 1].splice(board[moves[i] - 1].length - 1);
+//   }
+//   console.log(arr);
+//   return answer;
+// }
+// solution(
+//   [
+//     [0, 0, 0, 0, 0],
+//     [0, 0, 1, 0, 3],
+//     [0, 2, 5, 0, 1],
+//     [4, 2, 4, 4, 2],
+//     [3, 5, 1, 3, 1],
+//   ],
+//   [1, 5, 3, 5, 1, 2, 1, 4]
+// );
+// function solution(penter, pexit, pescape, data) {
+//   var answer = "";
+//   let arr = [];
+//   let arr2 = [];
+//   let dataArr = Array.from(data);
+
+//   while (true) {
+//     if (dataArr.length === 0) break;
+//     arr.push(dataArr.splice(0, penter.length).join(""));
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === penter) {
+//       arr2.push(pescape + arr[i]);
+//     } else if (arr[i] === pexit) {
+//       arr2.push(pescape + arr[i]);
+//     } else if (arr[i] === pescape) {
+//       arr2.push(pescape + arr[i]);
+//     } else {
+//       arr2.push(arr[i]);
+//     }
+//   }
+//   arr2.unshift(penter);
+//   arr2.push(pexit);
+
+//   answer = arr2.reduce((a, b) => a + b);
+
+//   return answer;
+// }
+// // solution("1100", "0010", "1001", "1101100100101111001111000000");
+// solution("10", "11", "00", "00011011");
+
+function solution(logs) {
+  var answer = [];
+  let logsArr = [];
+  let logsObj = {};
+  let arr = [[]];
+
+  for (let i = 0; i < logs.length; i++) {
+    logsArr.push(logs[i].split(" "));
+  }
+
+  for (let i = 0; i < logsArr.length; i++) {
+    logsObj[`${logsArr[i][0]}_${logsArr[i][1]}`] = {
+      who: logsArr[i][0],
+      number: logsArr[i][1],
+      score: logsArr[i][2],
+    };
+  }
+  for (let data in logsObj) {
+    console.log(logs);
+  }
+  return answer;
+}
+solution(["0001 3 95", "0001 5 90", "0001 5 100", "0002 3 95", "0001 7 80", "0001 8 80", "0001 10 90", "0002 10 90", "0002 7 80", "0002 8 80", "0002 5 100", "0003 99 90"]);
